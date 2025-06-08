@@ -11,10 +11,12 @@
   "description": "",
   "dependencies": {
     "@types/sqlite3": "^3.1.11",
+    "axios": "^1.9.0",
     "discord.js": "^14.19.3",
     "dotenv": "^16.5.0",
     "inquirer": "^12.6.3",
     "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
     "tmi.js": "^1.8.5",
     "twitch": "^4.6.7",
     "twitch-auth": "^4.6.7"

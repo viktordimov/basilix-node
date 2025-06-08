@@ -4,9 +4,11 @@ dotenv.config();
 export const config = {
   ttv_client_id: process.env.TTV_BOT_CLIENT_ID!,
   ttv_client_secret: process.env.TTV_BOT_CLIENT_SECRET!,
+  ttv_bot_username: process.env.TTV_BOT_USERNAME!,
+  ttv_access_token: process.env.TTV_ACCESS_TOKEN!,
+  ttv_refresh_token: process.env.TTV_REFRESH_TOKEN!,
   ttv_channel: process.env.TTV_CHANNEL!,
   ttv_owner_id: process.env.TTV_OWNER_ID!,
-  ttv_access_token: process.env.TTV_ACCESS_TOKEN!,
   dc_bot_token: process.env.DC_BOT_TOKEN!,
   dc_bot_client_id: Number(process.env.DC_BOT_CLIENT_ID!),
   dc_bot_secret: process.env.DC_BOT_SECRET!,
