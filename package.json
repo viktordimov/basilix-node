@@ -15,9 +15,11 @@
     "discord.js": "^14.19.3",
     "dotenv": "^16.5.0",
     "inquirer": "^12.6.3",
+    "node-sqlite": "^0.0.2-security",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7",
     "tmi.js": "^1.8.5",
+    "tsc": "^2.0.4",
     "twitch": "^4.6.7",
     "twitch-auth": "^4.6.7"
   },

@@ -1,21 +1,21 @@
 import tmi from "tmi.js";
-import { config } from "../config/env";
+import { loadBotConfig } from "../config/loadConfig";
 import { getValidAccessToken } from "./auth";
-import { get } from "http";
 
 export async function startTwitchBot() {
+  const config = await loadBotConfig();
   const accessToken = await getValidAccessToken();
 
   const twitchClient = new tmi.Client({
     identity: {
-      username: config.ttv_client_id,
+      username: config.TTV_BOT_CLIENT_ID,
       password: `oauth:${accessToken}`,
     },
-    channels: [config.ttv_channel],
+    channels: [config.TTV_CHANNEL],
   });
 
   twitchClient.on("connected", () => {
-    console.log(`Logged on Twitch as ${config.bot_name}`);
+    console.log(`Logged on Twitch as ${config.BOT_NAME}`);
   });
 
   twitchClient.on("message", (channel, tags, message, self) => {

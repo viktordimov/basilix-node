@@ -1,8 +1,6 @@
 import axios from "axios";
-import { config } from "../config/env";
 import { getDB } from "../db/sqlite";
-import { get } from "http";
-import { access } from "fs";
+import { loadBotConfig } from "../config/loadConfig";
 
 interface TokenData {
   access_token: string;
@@ -40,12 +38,13 @@ async function validateToken(accessToken: string): Promise<boolean> {
 }
 
 async function refreshAccessToken(refreshToken: string): Promise<TokenData> {
+  const config = await loadBotConfig();
   const res = await axios.post("https://id.twitch.tv/oauth2/token", null, {
     params: {
       grant_type: "refresh_token",
       refresh_token: refreshToken,
-      client_id: config.ttv_client_id,
-      client_secret: config.ttv_client_secret,
+      client_id: config.TTV_BOT_CLIENT_ID,
+      client_secret: config.TTV_BOT_CLIENT_SECRET,
     },
   });
 
